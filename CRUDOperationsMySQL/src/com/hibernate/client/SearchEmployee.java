@@ -13,14 +13,14 @@ public class SearchEmployee {
 		configuration.configure("com/hibernate/xml/hibernate.cfg.xml");
 		SessionFactory factory = configuration.buildSessionFactory();
 		Session session = factory.openSession();
-		
+
 		Employee employee = (Employee) session.get(Employee.class, 88);
-		
+
 		System.out.println("Employee Details:");
 		System.out.println(employee.getEmpId());
 		System.out.println(employee.getEmpName());
 		System.out.println(employee.getEmpSalary());
-		
+
 	}
 
 }
