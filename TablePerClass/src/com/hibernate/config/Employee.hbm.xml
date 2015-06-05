@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hibernate.pojo.Employee" table="employees">
+		<id name="employeeId" column="eid" />
+		<discriminator column="disc_name" />
+		<property name="employeeName" column="ename" length="20" />
+		<subclass name="com.hibernate.pojo.SalaryEmployee" discriminator-value="se">
+			<property name="salary" column="sal" />
+		</subclass>
+		<subclass name="com.hibernate.pojo.HourlyEmployee" discriminator-value="he">
+			<property name="hours" />
+			<property name="salPerHour" column="sphour" />
+		</subclass>
+	</class>
+</hibernate-mapping>
