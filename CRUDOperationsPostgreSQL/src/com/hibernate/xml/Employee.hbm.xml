@@ -1,0 +1,11 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hibernate.pojo.Employee" table="employee">
+		<id name="empId" column="eid" />
+		<property name="empName" column="ename" length="10" />
+		<property name="empSalary" column="sal" />
+	</class>
+</hibernate-mapping>
